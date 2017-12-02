@@ -12,7 +12,7 @@ init_printing()
 
 def Expand_E():
     # return expand(E**(I*x), complex = True)
-    # 将x指定为实数,需要重新定义x
+    # 将x指定为实数,需要重新定义x,加入参数real
     x = Symbol("x", real = True)
     return expand(E**(I*x), complex = True)
 
@@ -21,11 +21,17 @@ def Taylor_Expand():
     tmp = series(exp(I*x), x, 0, 10)
     return tmp
 
+import numpy as np
+def latex_E():
+    # 在python中使用Latex,将表达式转为Latex格式
+    return latex(exp(I*x+cos(x)))
+
 
 def main():
     ex_num = Expand_E()
     print(ex_num)
     print(Taylor_Expand())
+    print(latex_E())
 
 if __name__ == "__main__":
     main()
