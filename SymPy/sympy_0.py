@@ -11,7 +11,11 @@ f, g, h = symbols('f g h', cls=Function)
 init_printing()
 
 def Expand_E():
+    # return expand(E**(I*x), complex = True)
+    # 将x指定为实数,需要重新定义x
+    x = Symbol("x", real = True)
     return expand(E**(I*x), complex = True)
+
 
 def main():
     ex_num = Expand_E()
