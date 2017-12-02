@@ -16,10 +16,16 @@ def Expand_E():
     x = Symbol("x", real = True)
     return expand(E**(I*x), complex = True)
 
+def Taylor_Expand():
+    # 在x=0处进行Taylor展开
+    tmp = series(exp(I*x), x, 0, 10)
+    return tmp
+
 
 def main():
     ex_num = Expand_E()
     print(ex_num)
+    print(Taylor_Expand())
 
 if __name__ == "__main__":
     main()
