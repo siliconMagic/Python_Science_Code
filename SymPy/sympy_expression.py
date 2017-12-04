@@ -57,8 +57,17 @@ def print_expression(e, level = 0):
     else:
         print spaces + e.func.__name__
 
+# 使用Function()创建自定义的数学函数
+def custo_function():
+    f = Function("f")
+    print(f.__base__)
+    print(isinstance(f, Function))
+
+
+
 
 if __name__ == '__main__':
+    '''
     print(math_expression())
     _is_attr()
     Sympy_data_obj()
@@ -66,3 +75,5 @@ if __name__ == '__main__':
     print_expression(sqrt(x**2+y**y))
     print_expression(x+3)
     print_expression(x+y)
+    '''
+    custo_function()
